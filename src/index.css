@@ -1,13 +1,83 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin-top: 5vh;
+    box-sizing: border-box;
+    background-color: rgb(222, 193, 100);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a{
+    text-decoration: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.caption{
+    text-align: center;
+}
+
+.titleInput, h2, .caption{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.form-control{
+    min-width: 500px;
+    margin: none;
+    margin-bottom: 20px;
+}
+
+#floatingInput{
+    height: 6vh;
+    font-size:1.5rem;
+}
+
+#floatingTextarea2{
+    min-height: 10vh
+}
+
+.formButton{
+    margin-right: 10px;
+    display: inline;
+}
+
+.theGrid{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.grid1,
+.grid2{
+    min-width: 40vw;
+    align-self: flex-start;
+}
+
+.card{
+    margin-top: 1vh;
+}
+
+.pinnedCard{
+    border: 10px solid rgb(14, 190, 99);
+    margin-right: 3vw;
+}
+
+.allPinned{
+    margin-top: 5vh;
+}
+
+.unpinBtn{
+    margin-right: 1vw;
+}
+
+.littleBtn{
+    margin-right: 1vw
 }
