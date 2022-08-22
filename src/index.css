@@ -34,6 +34,10 @@ h1{
     margin-bottom: 20px;
 }
 
+.form-floating{
+    margin-bottom: 5px;
+}
+
 #floatingInput{
     height: 6vh;
     font-size:1.5rem;

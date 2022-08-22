@@ -7,11 +7,11 @@ export default function Form(props) {
             <form>
             <h1>React Todo List</h1>
                 <div className="form-floating">
-                    <input type="text" className="form-control titleInput" id="floatingInput" onChange={props.handleChange} name="title" value={props.listData.title} />
+                    <input type="text" className="form-control" id="floatingInput" onChange={props.handleChange} name="title" value={props.listData.title} />
                     <label htmlFor="floatingInput">Title (Required)</label>
                 </div>
                 <div className="form-floating">
-                    <textarea className="form-control descInput" id="floatingTextarea2" onChange={props.handleChange} name="desc" value={props.listData.desc} />
+                    <textarea className="form-control" id="floatingTextarea2" onChange={props.handleChange} name="desc" value={props.listData.desc} />
                     <label htmlFor="floatingTextarea2">Description</label>
                 </div>
                 <div className="form-floating">
