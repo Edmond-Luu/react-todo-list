@@ -6,5 +6,4 @@ Click [here](https://edmond-luu.github.io/react-todo-list) or on the image below
 
 This is the largest React app I have built completely from scratch as of now. It may seem like a simple todo list, but there are many features under the hood! [Bootstrap](https://getbootstrap.com/) was also used for building this app. 
 
-
-![image](https://user-images.githubusercontent.com/26613209/186230544-3b893876-f0a3-474f-828f-5951783b2705.png)
+<img src="https://user-images.githubusercontent.com/26613209/186230544-3b893876-f0a3-474f-828f-5951783b2705.png" width="400"/>
