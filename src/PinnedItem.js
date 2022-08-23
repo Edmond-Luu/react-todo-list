@@ -2,8 +2,8 @@ import React from "react"
 import * as Icon from 'react-bootstrap-icons'
 
 export default function PinnedItem(props) {
-    const itemStyle = {
-        backgroundColor: props.category === "personal" ? "#cfd2ff" : "#cfffd3"
+    let itemStyle = {
+        backgroundColor: props.category === "personal" ? "#cfd2ff" : props.category === "work" ? "#cfffd3" : "#f4d4fa"
     }
 
     return (

@@ -3,9 +3,12 @@ import * as Icon from 'react-bootstrap-icons'
 
 export default function Item(props) {
 
-    const itemStyle = {
-        backgroundColor: props.category === "personal" ? "#cfd2ff" : "#cfffd3"
+    let itemStyle = {
+        backgroundColor: props.category === "personal" ? "#cfd2ff" : props.category === "work" ? "#cfffd3" :  "#f4d4fa"
     }
+
+    const categoryCaption = props.category[0].toUpperCase() + props.category.slice(1)
+
 
     return (
         <div className="card" style={itemStyle}>
@@ -24,11 +27,13 @@ export default function Item(props) {
                             <select value={props.editData.category} onChange={props.editChange} name="category" className="form-select editSelection">
                                 <option value="personal">Personal</option>
                                 <option value="work">Work</option>
+                                <option value="other">Other</option>
                             </select>
                         </div> :
                         ""}
                 </div>
-                <div>
+
+                <div className="itemBottom">
 
                     {props.edit ?
                         <button type="button" className="btn btn-success delBtn littleBtn" onClick={(e) => props.editSubmit(e, props.id)}><Icon.CheckLg /></button> :
@@ -43,6 +48,8 @@ export default function Item(props) {
                     {props.edit ?
                         <button type="button" className="btn btn-secondary delBtn" onClick={(e) => props.toggleEditOff(e, props.id)}><Icon.XLg /></button> :
                         <button type="button" className="btn btn-danger delBtn" onClick={(e) => props.deleteItem(e, props.id)}><Icon.Trash /></button>}
+
+                    {props.edit ? "" : <p className="bottomCaption">{categoryCaption}</p>}
 
 
                 </div>

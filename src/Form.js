@@ -18,6 +18,7 @@ export default function Form(props) {
                     <select className="form-select form-control" id="floatingSelect" name="category" onChange={props.handleChange} value={props.listData.category}>
                         <option value="personal">Personal</option>
                         <option value="work">Work</option>
+                        <option value="other">Other</option>
                     </select>
                     <label htmlFor="floatingSelect">Category</label>
                 </div>

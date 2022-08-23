@@ -222,6 +222,12 @@ function App() {
     });
   }
 
+  function pinAll(){
+    setPinnedList(oldList => [...fullList, ...oldList]);
+    setFullList([]);
+    setEditMode(false);
+  }
+
   const condStyle = {
     display: fullList.length ? '' : 'none'
   }
@@ -284,6 +290,7 @@ function App() {
       <div className="grid2">
         <p className="caption">Made completely from scratch with ❤️ by <a href="https://edmond-luu.github.io" target="_blank" rel="noreferrer">Edmond Luu</a></p>
         <h3 style={condStyle}>Todo Items <Icon.ListCheck /></h3>
+        <button type="button" className="btn btn-primary unpinBtn" style={condStyle} onClick={pinAll}>Pin All Items</button>
         <button type="button" className="btn btn-danger" style={condStyle} onClick={deleteAll}>Delete All Items</button>
         {itemElements}
       </div>
