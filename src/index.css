@@ -128,7 +128,7 @@ h2, .caption{
     margin-left: auto;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1300px){
     .grid1{
         min-width: 50vw;
     }

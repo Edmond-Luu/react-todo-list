@@ -43,7 +43,6 @@ function App() {
 
   React.useEffect(() => {
     localStorage.setItem("editMode", JSON.stringify(editMode))
-    console.log(editMode)
   }, [editMode])
 
 
