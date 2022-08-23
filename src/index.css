@@ -1,7 +1,15 @@
+:root {
+    color-scheme: only light;
+    background-color: rgb(222, 193, 100);
+  }
+
 body {
     margin-top: 5vh;
     box-sizing: border-box;
     background-color: rgb(222, 193, 100);
+    min-height: 100vh;
+    margin-top: 0px;
+    padding-top: 5vh
 }
 
 a{
@@ -23,28 +31,34 @@ h1{
     text-align: center;
 }
 
-.titleInput, h2, .caption{
+h2, .caption{
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
 
 .form-control{
-    min-width: 500px;
+    width: 500px;
     margin: none;
     margin-bottom: 20px;
 }
 
 .form-floating{
-    margin-bottom: 5px;
+    padding-bottom: 2vh;
 }
 
 #floatingInput{
-    height: 6vh;
-    font-size:1.5rem;
+    font-family: 'Roboto', sans-serif;
+    min-height: 70px;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
 
 #floatingTextarea2{
-    min-height: 10vh
+    min-height: 120px;
+}
+
+#floatingSelect{
+    min-height: 70px;
 }
 
 .formButton{
@@ -84,4 +98,57 @@ h1{
 
 .littleBtn{
     margin-right: 1vw
+}
+
+.spacer{
+    margin-bottom: 25px;
+}
+
+
+.editInput{
+    height: 50px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+}
+
+.editTextArea{
+    height: 100px;
+}
+
+.editSelection{
+    max-width: 500px;
+}
+
+@media (max-width: 1200px){
+    .grid1{
+        min-width: 50vw;
+    }
+
+    .grid2{
+        margin-left: 5vh;
+    }
+
+    .form-control{
+        width: 400px;
+    }
+}
+
+@media (max-width: 765px){
+    .theGrid{
+        flex-direction: column;
+    }
+
+    .form-control{
+        width: 400px;
+    }
+
+    .grid2{
+        margin-left: 0; 
+    }
+    
+    .grid1,
+    .grid2{
+        align-self: center;
+    }
 }
