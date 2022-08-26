@@ -221,7 +221,7 @@ function App() {
     });
   }
 
-  function pinAll(){
+  function pinAll() {
     setPinnedList(oldList => [...fullList, ...oldList]);
     setFullList([]);
     setEditMode(false);
@@ -271,27 +271,31 @@ function App() {
   })
 
   return (
-    <div className="container theGrid">
-      <div className="grid1">
-        <Form
-          listData={listData}
-          handleChange={handleChange}
-          handleClick={handleClick}
-          handleClear={handleClear}
-        />
-        <div className="allPinned">
-          <h3 style={pinnedStyle}>Pinned Items <Icon.PinFill /></h3>
-          <button type="button" className="btn btn-warning unpinBtn" style={pinnedStyle} onClick={unpinAll}>Unpin All Items</button>
-          <button type="button" className="btn btn-danger" style={pinnedStyle} onClick={deleteAllPinned}>Delete All Pinned Items</button>
-          {pinnedItemElements}
+    <div>
+      <div className="container theGrid">
+        <div className="grid1">
+          <Form
+            listData={listData}
+            handleChange={handleChange}
+            handleClick={handleClick}
+            handleClear={handleClear}
+          />
+          <div className="allPinned">
+            <h3 style={pinnedStyle}>Pinned Items <Icon.PinFill /></h3>
+            <button type="button" className="btn btn-warning unpinBtn" style={pinnedStyle} onClick={unpinAll}>Unpin All Items</button>
+            <button type="button" className="btn btn-danger" style={pinnedStyle} onClick={deleteAllPinned}>Delete All Pinned Items</button>
+            {pinnedItemElements}
+          </div>
+        </div>
+        <div className="grid2">
+          <h3 style={condStyle}>Todo Items <Icon.ListCheck /></h3>
+          <button type="button" className="btn btn-primary unpinBtn" style={condStyle} onClick={pinAll}>Pin All Items</button>
+          <button type="button" className="btn btn-danger" style={condStyle} onClick={deleteAll}>Delete All Items</button>
+          {itemElements}
         </div>
       </div>
-      <div className="grid2">
+      <div className="footer">
         <p className="caption">Made completely from scratch with ❤️ by <a href="https://edmond-luu.github.io" target="_blank" rel="noreferrer">Edmond Luu</a></p>
-        <h3 style={condStyle}>Todo Items <Icon.ListCheck /></h3>
-        <button type="button" className="btn btn-primary unpinBtn" style={condStyle} onClick={pinAll}>Pin All Items</button>
-        <button type="button" className="btn btn-danger" style={condStyle} onClick={deleteAll}>Delete All Items</button>
-        {itemElements}
       </div>
     </div>
   )
