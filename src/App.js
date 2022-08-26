@@ -271,7 +271,8 @@ function App() {
   })
 
   return (
-    <div>
+    <div className="app">
+
       <div className="container theGrid">
         <div className="grid1">
           <Form
@@ -294,9 +295,12 @@ function App() {
           {itemElements}
         </div>
       </div>
+
+
       <div className="footer">
         <p className="caption">Made completely from scratch with ❤️ by <a href="https://edmond-luu.github.io" target="_blank" rel="noreferrer">Edmond Luu</a></p>
       </div>
+      
     </div>
   )
 }

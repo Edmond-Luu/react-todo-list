@@ -42,7 +42,7 @@ export default function Item(props) {
 
                     {props.editMode ?
                         "":
-                        <button type="button" className="btn btn-light littleBtn" onClick={(e) => props.toggleEditOn(e, props.id)}><Icon.Pencil /></button>}
+                        <button type="button" className="btn btn-light littleBtn editBtn" onClick={(e) => props.toggleEditOn(e, props.id)}><Icon.Pencil /></button>}
 
 
                     {props.edit ?

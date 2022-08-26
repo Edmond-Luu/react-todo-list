@@ -1,181 +1,201 @@
 :root {
     color-scheme: only light;
     background-color: rgb(222, 193, 100);
-  }
+}
 
 body {
-    margin-top: 5vh;
     box-sizing: border-box;
     background-color: rgb(222, 193, 100);
     min-height: 100vh;
-    margin-top: 0px;
-    padding-top: 5vh
 }
 
-a{
-    text-decoration: none;
-    color: gold;
+.app{
+    height: 100vh;
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
 }
 
-a:hover{
-    color: rgb(73, 208, 28);
+a {
+    text-decoration: underline;
+    font-weight: 700;
+    color: white;
 }
 
-form{
+a:hover {
+    color: white;
+}
+
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-h1, .bottomCaption{
+h1,
+.bottomCaption {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
 
-.caption{
+.caption {
     text-align: center;
 }
 
-h2, .caption{
+h2,
+.caption {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
 
-.form-control{
+.form-control {
     width: 500px;
     margin: none;
     margin-bottom: 20px;
 }
 
-.form-floating{
+.form-floating {
     padding-bottom: 2vh;
 }
 
-#floatingInput{
+#floatingInput {
     font-family: 'Roboto', sans-serif;
     min-height: 70px;
     font-size: 1.25rem;
     font-weight: 500;
 }
 
-#floatingTextarea2{
+#floatingTextarea2 {
     min-height: 120px;
 }
 
-#floatingSelect{
+#floatingSelect {
     min-height: 70px;
 }
 
-.formButton{
+.formButton {
     margin-right: 10px;
     display: inline;
 }
 
-.theGrid{
+.theGrid {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 20px;
 }
 
 .grid1,
-.grid2{
+.grid2 {
     min-width: 40vw;
     align-self: flex-start;
 }
 
-.card{
+.card {
     margin-top: 1vh;
 }
 
-.pinnedCard{
+.pinnedCard {
     border: 10px solid rgb(14, 190, 99);
     margin-right: 3vw;
 }
 
-.allPinned{
+.allPinned {
     margin-top: 5vh;
 }
 
-.unpinBtn{
+.unpinBtn {
     margin-right: 1vw;
 }
 
-.littleBtn{
+.littleBtn {
     margin-right: 1vw
 }
 
-.spacer{
+.editBtn {
+    background-color: rgb(255, 166, 0);
+    border-color: rgb(255, 166, 0);
+}
+
+.editBtn:hover {
+    background-color: rgb(236, 154, 0);
+}
+
+.spacer {
     margin-bottom: 25px;
 }
 
 
-.editInput{
+.editInput {
     height: 50px;
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
 }
 
-.editTextArea{
+.editTextArea {
     height: 100px;
 }
 
-.editSelection{
+.editSelection {
     max-width: 500px;
 }
 
-.itemBottom{
+.itemBottom {
     display: flex;
 }
 
-.bottomCaption{
+.bottomCaption {
     margin-left: auto;
 }
 
-.footer{
+.footer {
+    margin-top: auto;
     display: flex;
-    position: absolute;
-    height: 100px;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(92, 92, 179);
+    min-height: 100px;
+    background-color: rgb(32, 32, 99);
     width: 100%;
     color: white;
     align-items: center;
     justify-content: center;
     font-size: 20px;
-  }
+}
 
-@media (max-width: 1300px){
-    .grid1{
+@media (max-width: 1300px) {
+    .grid1 {
         min-width: 50vw;
     }
 
-    .grid2{
+    .grid2 {
         margin-left: 5vh;
     }
 
-    .form-control{
+    .form-control {
         width: 400px;
     }
 }
 
-@media (max-width: 765px){
-    .theGrid{
+@media (max-width: 765px) {
+    .theGrid {
         flex-direction: column;
     }
 
-    .form-control{
+    .form-control {
         width: 400px;
     }
 
-    .grid2{
-        margin-left: 0; 
+    .grid2 {
+        margin-left: 0;
+        margin-top: 25px;
     }
-    
+
     .grid1,
-    .grid2{
+    .grid2 {
         align-self: center;
+    }
+
+    .card{
+        max-width: 425px;
     }
 }
