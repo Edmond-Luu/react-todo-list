@@ -5,7 +5,7 @@ export default function Form(props) {
     return (
         <div>
             <form>
-            <h1>React Todo List</h1>
+            <h1>React - Todo List</h1>
                 <div className="form-floating">
                     <input type="text" className="form-control" id="floatingInput" onChange={props.handleChange} name="title" value={props.listData.title} />
                     <label htmlFor="floatingInput">Title (Required)</label>
