@@ -22,8 +22,8 @@ This is the largest React app I have built completely from scratch as of now. It
 * There are three buttons for each note in this section.
    * Clicking on the blue pin button will transfer that note to the Pinned Items section.
    * Clicking on the yellow pencil button will allow the user to edit the note with all of the note's information prefilled into each input.
-      * Once the user edits the notes, clicking on the green check button saves it.
-      * Clicking on the gray x button will discard all changes.
+     * Once the user edits the notes, clicking on the green check button saves it.
+     * Clicking on the gray x button will discard all changes.
    * Clicking on the red trash button will permanently delete that note.
 
 ### Pinned Items section (bottom-left): ###
@@ -34,7 +34,7 @@ This is the largest React app I have built completely from scratch as of now. It
    * A yellow unpin button, when clicked, will unpin that particular note by transferring it back to the Todo Items section.
    * A red trash button, when clicked, will permanently delete that particular note.
 
-The app is also fully responsive, meaning that it will automatically adjust itself based on screen size. For example, by default, on larger screens, the page is laid out in a horizontal format with the form and the pinned notes on one side and the unpinned notes on the other side. However, on smaller screens, the page automatically changes into a vertical format with the form, the pinned notes, and the unpinned notes taking up one column each. Each element would resize itself accordingly to maximize space and to ensure that the user is able to see as much content as possible.
+The app is also fully responsive, meaning that it will automatically adjust itself based on screen size. For example, by default, on larger screens, the page is laid out in a horizontal format with the form and the Pinned Items section on the left side and the Todo Items section on the right side. However, on smaller screens, the page automatically changes into a vertical format with the form, the pinned notes, and the unpinned notes taking up one column each. Each element would resize itself accordingly to maximize space and to ensure that the user is able to see as much content as possible.
 
 <div>
 <img src="https://user-images.githubusercontent.com/26613209/187988579-3cd88dcb-ea6f-447d-84d5-792b268e44de.png" width="400"/>
