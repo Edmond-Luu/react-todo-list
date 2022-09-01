@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-.app{
+.app {
     height: 100vh;
     padding-top: 5vh;
     display: flex;
@@ -190,12 +190,14 @@ h2,
         margin-top: 25px;
     }
 
+
     .grid1,
     .grid2 {
+        width: 90vw;
         align-self: center;
     }
 
-    .card{
+    .card {
         max-width: 425px;
     }
 }
