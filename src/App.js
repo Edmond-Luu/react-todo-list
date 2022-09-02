@@ -1,5 +1,5 @@
 import React from "react"
-import Form from "./Form"
+import SubmissionForm from "./SubmissionForm"
 import Item from "./Item"
 import PinnedItem from "./PinnedItem"
 import { nanoid } from "nanoid"
@@ -275,7 +275,7 @@ function App() {
 
       <div className="container theGrid">
         <div className="grid1">
-          <Form
+          <SubmissionForm
             listData={listData}
             handleChange={handleChange}
             handleClick={handleClick}

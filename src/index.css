@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-.app{
+.app {
     height: 100vh;
     padding-top: 5vh;
     display: flex;
@@ -40,6 +40,7 @@ h1,
 
 .caption {
     text-align: center;
+    margin: 0;
 }
 
 h2,
@@ -56,6 +57,7 @@ h2,
 
 .form-floating {
     padding-bottom: 2vh;
+    display: flex;
 }
 
 #floatingInput {
@@ -142,6 +144,11 @@ h2,
     max-width: 500px;
 }
 
+.editInput,
+.editTextArea {
+    margin-bottom: 10px;
+}
+
 .itemBottom {
     display: flex;
 }
@@ -190,17 +197,17 @@ h2,
         margin-top: 25px;
     }
 
-    .grid1{
+    .grid1 {
         align-self: center;
     }
-    
-    .grid2{
+
+    .grid2 {
         width: 90vw;
         padding-left: 7vw;
         padding-right: 3vw;
     }
 
-    .card{
+    .card {
         max-width: 425px;
     }
 }
