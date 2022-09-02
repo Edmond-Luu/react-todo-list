@@ -34,7 +34,7 @@ This is the largest React app I have built completely from scratch as of now. It
    * A yellow unpin button, when clicked, will unpin that particular note by transferring it back to the Todo Items section.
    * A red trash button, when clicked, will permanently delete that particular note.
    
-React’s useState and useEffect hooks are heavily used in this application as needed to account for and to track which notes are being modified.
+React’s useState and useEffect hooks are heavily used in this application as they are needed to account for and to track which notes are being modified.
 
 The app is also fully responsive, meaning that it will automatically adjust itself based on screen size. For example, by default, on larger screens, the page is laid out in a horizontal format with the form and the Pinned Items section on the left side and the Todo Items section on the right side. However, on smaller screens, the page automatically changes into a vertical format with the form, the pinned notes, and the unpinned notes taking up one column each. Each element would resize itself accordingly to maximize space and to ensure that the user is able to see as much content as possible.
 
