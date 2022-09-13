@@ -1,6 +1,6 @@
 # React - Todo List
 
-### *_Newest feature (9/13/2022): drag and drop functionality. You can now rearrange the order of your notes in both the unpinned and pinned sections to your liking!_* ###
+### *_Newest feature (9/13/2022): drag and drop functionality. You can now rearrange the order of your notes in both the todo and pinned items sections to your liking!_* ###
 
 Click [here](https://edmond-luu.github.io/react-todo-list) or on the image below to see the app!
 
