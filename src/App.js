@@ -199,7 +199,7 @@ function App() {
 
   function editSubmit(event, updateId) {
     const theList = fullList
-    const theItem = theList.find(item => item.id === updateId)
+    // const theItem = theList.find(item => item.id === updateId)
     const updateIndex = theList.findIndex(item => item.id === updateId);
 
     setEditMode(!editMode);

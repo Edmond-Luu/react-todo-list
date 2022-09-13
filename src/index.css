@@ -134,15 +134,24 @@ h2,
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
+    max-width: 500px;
 }
 
 .editTextArea {
     height: 100px;
+    max-width: 500px;
 }
 
 .editSelection {
     max-width: 500px;
 }
+
+.editInput,
+.editTextArea,
+.editSelection {
+    max-width: 500px;
+}
+
 
 .editInput,
 .editTextArea {
@@ -180,6 +189,12 @@ h2,
 
     .form-control {
         width: 400px;
+    }
+
+    .editInput,
+    .editTextArea,
+    .editSelection {
+        max-width: 100%;
     }
 }
 
