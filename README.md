@@ -1,5 +1,7 @@
 # React - Todo List
 
+### *_Newest feature (9/13/2022): drag and drop functionality. You can now rearrange the order of your notes in both the unpinned and pinned sections to your liking!_* ###
+
 Click [here](https://edmond-luu.github.io/react-todo-list) or on the image below to see the app!
 
 [![image](https://user-images.githubusercontent.com/26613209/187746941-59881751-a429-4d7d-bbe0-502ca992f56e.png)](https://edmond-luu.github.io/react-todo-list/)
@@ -33,6 +35,8 @@ This is the largest React app I have built completely from scratch as of now. It
 * For each pinned note, there are two buttons:
    * A yellow unpin button, when clicked, will unpin that particular note by transferring it back to the Todo Items section.
    * A red trash button, when clicked, will permanently delete that particular note.
+   
+On both todo items and pinned items sections, users can drag and drop to rearrange the order of the items to their liking.
    
 React’s useState and useEffect hooks are heavily used in this application as they are needed to account for and to track which notes are being modified.
 
