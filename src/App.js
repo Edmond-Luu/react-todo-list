@@ -4,6 +4,7 @@ import Item from "./Item"
 import PinnedItem from "./PinnedItem"
 import { nanoid } from "nanoid"
 import * as Icon from 'react-bootstrap-icons'
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 function App() {
   const [fullList, setFullList] = React.useState(JSON.parse(localStorage.getItem("fullList")) || []);
@@ -227,6 +228,20 @@ function App() {
     setEditMode(false);
   }
 
+  function handleOnDragEndUnpinned(result) {
+    const items = Array.from(fullList);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    setFullList(items);
+  }
+
+  function handleOnDragEndPinned(result) {
+    const items = Array.from(pinnedList);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    setPinnedList(items)
+  }
+
   const condStyle = {
     display: fullList.length ? '' : 'none'
   }
@@ -234,41 +249,41 @@ function App() {
     display: pinnedList.length ? '' : 'none'
   }
 
-  const itemElements = fullList.map(item => {
-    return (
-      <Item
-        title={item.title}
-        desc={item.desc}
-        category={item.category}
-        key={item.id}
-        id={item.id}
-        editMode={editMode}
-        edit={item.edit}
-        editData={editData}
-        deleteItem={deleteItem}
-        pinItem={pinItem}
-        toggleEditOn={toggleEditOn}
-        toggleEditOff={toggleEditOff}
-        editChange={editChange}
-        editSubmit={editSubmit}
-      />
-    )
-  })
+  // const itemElements = fullList.map(item => {
+  //   return (
+  //     <Item
+  //       title={item.title}
+  //       desc={item.desc}
+  //       category={item.category}
+  //       key={item.id}
+  //       id={item.id}
+  //       editMode={editMode}
+  //       edit={item.edit}
+  //       editData={editData}
+  //       deleteItem={deleteItem}
+  //       pinItem={pinItem}
+  //       toggleEditOn={toggleEditOn}
+  //       toggleEditOff={toggleEditOff}
+  //       editChange={editChange}
+  //       editSubmit={editSubmit}
+  //     />
+  //   )
+  // })
 
-  const pinnedItemElements = pinnedList.map(item => {
-    return (
-      <PinnedItem
-        title={item.title}
-        desc={item.desc}
-        category={item.category}
-        key={item.id}
-        id={item.id}
-        deletePinnedItem={deletePinned}
-        deleteAllPinned={deleteAllPinned}
-        unpinItem={unpinItem}
-      />
-    )
-  })
+  // const pinnedItemElements = pinnedList.map(item => {
+  //   return (
+  //     <PinnedItem
+  //       title={item.title}
+  //       desc={item.desc}
+  //       category={item.category}
+  //       key={item.id}
+  //       id={item.id}
+  //       deletePinnedItem={deletePinned}
+  //       deleteAllPinned={deleteAllPinned}
+  //       unpinItem={unpinItem}
+  //     />
+  //   )
+  // })
 
   return (
     <div className="app">
@@ -285,14 +300,83 @@ function App() {
             <h3 style={pinnedStyle}>Pinned Items <Icon.PinFill /></h3>
             <button type="button" className="btn btn-warning unpinBtn" style={pinnedStyle} onClick={unpinAll}>Unpin All Items</button>
             <button type="button" className="btn btn-danger" style={pinnedStyle} onClick={deleteAllPinned}>Delete All Pinned Items</button>
-            {pinnedItemElements}
+
+
+
+            <DragDropContext onDragEnd={handleOnDragEndPinned}>
+              <Droppable droppableId="pinnedNotes">
+                {(provided) => (
+                  <div {...provided.droppableProps} ref={provided.innerRef}>
+                    {pinnedList.map((item, index) => {
+                      return (
+                        <Draggable key={item.id} draggableId={item.id} index={index}>
+                          {(provided) => (
+                            <div className="cardSpacing" {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                              <PinnedItem
+                                title={item.title}
+                                desc={item.desc}
+                                category={item.category}
+                                key={item.id}
+                                id={item.id}
+                                deletePinnedItem={deletePinned}
+                                deleteAllPinned={deleteAllPinned}
+                                unpinItem={unpinItem}
+                              />
+                            </div>
+                          )}
+                        </Draggable>
+                      )
+                    })
+                    }
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
+
           </div>
         </div>
         <div className="grid2">
           <h3 style={condStyle}>Todo Items <Icon.ListCheck /></h3>
           <button type="button" className="btn btn-primary unpinBtn" style={condStyle} onClick={pinAll}>Pin All Items</button>
           <button type="button" className="btn btn-danger" style={condStyle} onClick={deleteAll}>Delete All Items</button>
-          {itemElements}
+
+          <DragDropContext onDragEnd={handleOnDragEndUnpinned}>
+            <Droppable droppableId="unpinnedNotes">
+              {(provided) => (
+                <div {...provided.droppableProps} ref={provided.innerRef}>
+                  {fullList.map((item, index) => {
+                    return (
+                      <Draggable key={item.id} draggableId={item.id} index={index}>
+                        {(provided) => (
+                          <div className="cardSpacing" {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                            <Item
+                              title={item.title}
+                              desc={item.desc}
+                              category={item.category}
+                              id={item.id}
+                              editMode={editMode}
+                              edit={item.edit}
+                              editData={editData}
+                              deleteItem={deleteItem}
+                              pinItem={pinItem}
+                              toggleEditOn={toggleEditOn}
+                              toggleEditOff={toggleEditOff}
+                              editChange={editChange}
+                              editSubmit={editSubmit}
+                            />
+                          </div>
+                        )}
+                      </Draggable>
+                    )
+                  })
+                  }
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+
         </div>
       </div>
 
@@ -300,7 +384,7 @@ function App() {
       <div className="footer">
         <p className="caption">Made completely from scratch with ❤️ by <a href="https://edmond-luu.github.io" target="_blank" rel="noreferrer">Edmond Luu</a></p>
       </div>
-      
+
     </div>
   )
 }

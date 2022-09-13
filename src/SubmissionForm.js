@@ -23,7 +23,7 @@ export default function SubmissionForm(props) {
                     <label htmlFor="floatingTextarea2">Description</label>
                 </div> */}
 
-                <FloatingLabel controlId="floatingTextarea2" label="Description">
+                <FloatingLabel label="Description">
                     <Form.Control as="textarea" placeholder="" id="floatingTextarea2" onChange={props.handleChange} name="desc" value={props.listData.desc} />
                 </FloatingLabel>
 
